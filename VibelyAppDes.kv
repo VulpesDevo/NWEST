@@ -1,0 +1,1859 @@
+#:import MDTapTargetView kivymd.uix.taptargetview.MDTapTargetView
+#:import ShaderTransition kivy.uix.screenmanager.ShaderTransition
+#:import MDDialog kivymd.uix.dialog.MDDialog
+
+<Search_Result@OneLineAvatarListItem>:
+    id: search_list
+
+    text_list: ''
+
+    divider: 'Full'
+
+    Label:
+        text: root.text_list
+        size_hint_y: None
+        font_size: '15sp'
+        height: self.texture_size[1]
+        text_size: (self.width - dp(100), None)
+        pos_hint: {"center_y": 0.5, "x": (dp(90)) / self.parent.width }
+
+    ImageLeftWidget:
+
+        FitImage:
+            id: search_pic
+            source: 'mobilelegends.jpg'
+            size_hint: None, None
+            pos_hint: {'center_y': 0.5}
+
+<Content@MDCard>:
+    size_hint: None, None
+    size: "100dp", "150dp"
+
+    FitImage:
+        id: image_widget
+
+<SuccessRegistration>:
+    auto_dismiss: False
+    md_bg_color: 0,0,0,0
+    MDCard:
+        md_bg_color:"#190F28"
+        size_hint: None, None
+        size: "275dp", "350dp"
+        radius:[20,]
+        MDFloatLayout:
+            padding: "10dp"
+            MDCard:
+                md_bg_color: 0,0,0,0
+                size_hint: None, None
+                size: "150dp", "150dp"
+                pos_hint: {"center_x": .5, "center_y": .75}
+                MDFloatLayout:
+                    MDIconButton:
+                        icon: "../new/images/regis.png"
+                        disabled: True
+                        icon_size: "200sp"
+                        pos_hint: {"center_x": .5, "center_y": .5}
+            Label:
+                md_bg_color:0,0,0,0
+                pos_hint: {"center_x": .5, "center_y": .5}
+                text: "Congratulations!\nYou're now officially Vibely user."
+                halign: "center"
+            MDFillRoundFlatButton:
+                text: "OK"
+                bold:True
+                font_size:"20sp"
+                pos_hint: {"center_x": .5, "center_y": .2}
+                size_hint: .5,.1
+                on_release:root.dismiss()
+<AdjustableBox@MDBoxLayout>:
+    
+    orientation: "vertical"
+    spacing: "400dp"
+    padding: "20dp"
+<MDCardAgents@MDCard>:
+
+
+    md_bg_color: 0, 0.1647, 0.5176, 1
+    size_hint: .6,.7
+
+
+    elevation: 5
+    orientation: "vertical"
+    pos_hint: {"center_x": 0.5 }
+
+    #MDBoxLayout:
+        #orientation: 'vertical'
+        #size_hint: 1,0.3
+
+    FitImage:
+        id: image_agents
+        radius: "6dp"
+        allow_stretch: True
+        keep_ratio: False
+        pos_hint: {"center_x": 0.5,"center_y": 0.5 }
+        size_hint_y: 0.45
+
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        size_hint: 1,0.5
+        padding: "20dp"
+
+        MDLabel:
+            id: title
+            text: "PHOENIX"
+            size_hint_y: None
+            height: dp(10)
+            font_size: "20sp"
+            halign: "center"
+
+        MDLabel:
+            id: type
+            text: "DUELIST"
+            size_hint_y: None
+            height: dp(40)
+            font_size: "12sp"
+            halign: "center"
+
+        MDLabel:
+            id: about
+            text: "Phoenix, like his namesake, is all about fire, and rising from the ashes. With the ability to create walls of fire, throw fireballs, and resurrect at a designated location with full health upon death, Phoenix is a force to be reckoned with."
+            size_hint_y: None
+            height: dp(80)
+            font_size: "12sp"
+            halign: "center"
+            multiline: True
+
+
+        GridLayout:
+            cols: 5
+            rows: 2
+            size_hint_y: None
+            height: self.minimum_height
+            size_hint_x: 1
+
+            MDLabel:
+                id: passive
+                text: "Passive"
+                size_hint_y: None
+                height: dp(30)
+                font_size: "12sp"
+                halign: "center"
+                multiline: True
+                
+                canvas.before:
+                    Color:
+                        rgba: 0.047, 0.000, 0.510, 1.0
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+
+            MDLabel:
+                id: basic1
+                text: "Basic"
+                size_hint_y: None
+                height: dp(30)
+                font_size: "12sp"
+                halign: "center"
+                multiline: True
+                canvas.before:
+                    Color:
+                        rgba: 0.047, 0.000, 0.510, 1.0
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+
+            MDLabel:
+                id: basic2
+                text: "Basic"
+                size_hint_y: None
+                height: dp(30)
+                font_size: "12sp"
+                halign: "center"
+                multiline: True
+                canvas.before:
+                    Color:
+                        rgba: 0.047, 0.000, 0.510, 1.0
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+
+            MDLabel:
+                id: signature
+                text: "Signature"
+                size_hint_y: None
+                height: dp(30)
+                font_size: "12sp"
+                halign: "center"
+                multiline: True
+                canvas.before:
+                    Color:
+                        rgba: 0.047, 0.000, 0.510, 1.0
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+
+            MDLabel:
+                id: ultimate
+                text: "Ultimate"
+                size_hint_y: None
+                height: dp(30)
+                font_size: "12sp"
+                halign: "center"
+                multiline: True
+                canvas.before:
+                    Color:
+                        rgba: 0.047, 0.000, 0.510, 1.0
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+
+            MDLabel:
+                id: heating_up
+                text: "Heating Up"
+                size_hint_y: None
+                height: dp(30)
+                font_size: "12sp"
+                halign: "center"
+                multiline: True
+                canvas.before:
+                    Color:
+                        rgba: 0.098, 0.106, 0.153, 1.0 
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+            MDLabel:
+                id: blaze
+                text: "Blaze (C)"
+                size_hint_y: None
+                height: dp(30)
+                font_size: "12sp"
+                halign: "center"
+                multiline: True
+                canvas.before:
+                    Color:
+                        rgba: 0.098, 0.106, 0.153, 1.0 
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+            MDLabel:
+                id: curveball
+                text: "Curveball (Q)"
+                size_hint_y: None
+                height: dp(30)
+                font_size: "12sp"
+                halign: "center"
+                multiline: True
+                canvas.before:
+                    Color:
+                        rgba: 0.098, 0.106, 0.153, 1.0 
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+            MDLabel:
+                id: hot_hands
+                text: "Hot Hands (E)"
+                size_hint_y: None
+                height: dp(30)
+                font_size: "12sp"
+                halign: "center"
+                multiline: True
+                canvas.before:
+                    Color:
+                        rgba: 0.098, 0.106, 0.153, 1.0 
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+            MDLabel:
+                id: run_it_back
+                text: "Run It Back (X)"
+                size_hint_y: None
+                height: dp(30)
+                font_size: "12sp"
+                halign: "center"
+                multiline: True
+                canvas.before:
+                    Color:
+                        rgba: 0.098, 0.106, 0.153, 1.0 
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+<MDCardHome@MDCard>:
+
+    # md_bg_color: 0, 0.1647, 0.5176, 1
+    size_hint: .9,None
+    height: "380dp"
+    elevation: 5
+    orientation: "vertical"
+    pos_hint: {"center_x": 0.5 }
+    radius:25
+
+
+
+
+    MDFloatLayout:
+        orientation: 'vertical'
+        size_hint: 1,1
+
+        FitImage:
+            id: bgpic
+            source: 'bg2p.jpg' 
+            
+            #radius: "6dp"
+            radius:"25dp"
+            size_hint:1,1
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+
+    # MDBoxLayout:
+    #     orientation: 'vertical'
+        #size_hint: 1,0.3
+
+
+        FitImage:
+            id: image_mdcard
+            
+            radius:"25dp"
+            
+            pos_hint: {"center_x": 0.5,"center_y": 0.9 }
+            size_hint_y: 0.5
+            
+
+        MDLabel:
+            id: title_mdcard
+            
+            size_hint_y: None
+            height: dp(10)
+            font_size: "25sp"
+            halign: "center"
+            pos_hint: {"center_x": 0.5,"center_y": 0.55 }
+
+        MDLabel:
+            id: year_mdcard
+            
+            size_hint_y: None
+            text_color:184/255, 98/255, 27/255
+            height: dp(40)
+            font_size: "12sp"
+            halign: "center"
+            pos_hint: {"center_x": 0.5,"center_y": 0.45 }
+
+        MDLabel:
+            id: about_mdcard
+            
+            size_hint_y: None
+            font_size: "12sp"
+            halign: "center"
+            multiline: True
+            pos_hint: {"center_x": 0.5,"center_y": 0.30 }
+
+        MDRectangleFlatButton:
+            id: button_mdcard
+            text: "VIEW MORE DETAILS..."
+            text_color:184/255, 98/255, 27/255,1
+            halign: "center"
+            pos_hint: {"center_x": 0.5,"center_y": 0.05 }
+
+
+
+<Likes_List>:
+    size_hint: None, None
+    size: "90dp", "90dp"
+<ALLCateg>:
+    id: card
+    md_bg_color:0,0,0,0
+    size_hint: None, None
+    size: "80dp", "100dp"
+
+<FailRegistration>:
+    auto_dismiss: False
+    md_bg_color: 0,0,0,0
+    MDCard:
+        md_bg_color:"#190F28"
+        size_hint: None, None
+        size: "275dp", "350dp"
+        radius:[20,]
+        MDFloatLayout:
+            padding: "10dp"
+            MDCard:
+                md_bg_color: 0,0,0,0
+                size_hint: None, None
+                size: "150dp", "150dp"
+                pos_hint: {"center_x": .5, "center_y": .75}
+                MDFloatLayout:
+                    MDIconButton:
+                        theme_text_color: "Custom"
+                        icon: "exclamation-thick"
+                        icon_size: "100sp"
+                        text_color:"#820000"
+                        disabled: True
+                        pos_hint: {"center_x": .5, "center_y": .5}
+            Label:
+                md_bg_color:0,0,0,0
+                pos_hint: {"center_x": .5, "center_y": .5}
+                text: "Oops!\nSomething wasn't right"
+                halign: "center"
+            MDFillRoundFlatButton:
+                text: "OK"
+                bold:True
+                font_size:"20sp"
+                pos_hint: {"center_x": .5, "center_y": .3}
+                size_hint: .5,.1
+                on_release:root.dismiss()
+                    
+            
+<MyIconButton+HoverBehavior>:
+    theme_icon_color: "Custom"  
+    icon_color:"white"
+    on_enter: self.icon_color = "#CD5C3B"
+    on_leave: self.icon_color ="white"
+<CardElementMDCard>:
+    md_bg_color: 'black'
+    size_hint: None, None
+    size: "80dp", "80dp"
+    pos_hint: {"center_x": .5, "center_y": .5}
+    canvas.before:
+        Color:
+            rgba: 67/255, 42/255, 103/255,1
+        RoundedRectangle:
+            radius: [10,]
+            size: self.size[0] + dp(8), self.size[1] + dp(8)
+            pos: self.pos[0] - dp(4), self.pos[1] - dp(4)
+<CategMDCard>:
+    md_bg_color: 'black'
+    orientation: "vertical"
+    size_hint: None, None
+    size: "80dp", "80dp"
+    pos_hint: {"center_x": .5, "center_y": .5}
+    canvas.before:
+        Color:
+            rgba: 67/255, 42/255, 103/255,1
+        RoundedRectangle:
+            radius: [10,]
+            size: self.size[1] + dp(8), self.size[1] + dp(8)
+            pos: self.pos[0] - dp(4), self.pos[1] - dp(4)
+<LoginMDTextField>:
+    size_hint: 1,None
+    mode:"rectangle"
+    theme_text_color: "Custom"
+    line_color_normal: 184/255, 98/255, 27/255,1
+    helper_text_mode:"on_error"
+    text_color_focus: 184/255, 98/255, 27/255,1
+    line_color_focus:'#8D198F'
+    hint_text_color_focus: 184/255, 98/255, 27/255,1
+<RegisMDTextField>:
+    size_hint: 1,None
+    mode:"rectangle"
+    line_color_normal: 184/255, 98/255, 27/255,1
+    theme_text_color: "Custom"
+    line_color_focus:'#8D198F'
+    helper_text_mode:"on_error"
+    text_color_focus: 184/255, 98/255, 27/255,1
+    hint_text_color_focus: 184/255, 98/255, 27/255,1
+    required: True
+<LikesCard>:
+    id: like
+    pos_hint: {"center_x": .5, "center_y": .5}
+    size_hint: None, None
+    size: "150dp", "190dp"
+    canvas.before:
+        Color:
+            rgba: 254/255, 129/255, 49/255,1
+        RoundedRectangle:
+            radius: [10,]
+            size: self.size[0] + dp(8), self.size[1] + dp(8)
+            pos: self.pos[0] - dp(4), self.pos[1] - dp(4)
+<ProfileMDCard>:
+    size_hint:None,None
+    size:"100dp","100dp"
+    md_bg_color:"#14141C"
+    on_enter: self.md_bg_color = "#CD5C3B"
+    on_leave: self.md_bg_color ="#14141C"
+    
+    canvas.before:
+        Color:
+            rgba: 254/255, 129/255, 49/255,1
+        RoundedRectangle:
+            
+            radius: [10,]
+            size: self.size[1] + dp(8), self.size[1] + dp(8)
+            pos: self.pos[0] - dp(4), self.pos[1] - dp(4) 
+            
+<vibelyApp>:
+    screen_manager: manager
+    ScreenManager:
+        id:manager
+        Screen:
+            id: first_screen
+            name: "firstScreen"
+            MDBoxLayout:
+                orientation: "vertical"
+                padding:"20dp"
+                md_bg_color:'black'
+                MDCard:
+                    md_bg_color:'black'
+                    size_hint:None,None
+                    size:root.width,"200dp"
+                    pos_hint:{"center_x":.5, "center_y":.5}
+                    MDFloatLayout:
+                        MDCard:
+                            size_hint: None,None
+                            md_bg_color:0,0,0,0
+                            pos_hint:{"center_x":.5, "center_y":.5}
+                            size:"150dp","150dp"
+                            FitImage:
+                                source: "../new/images/vibely.png"
+                        MDCard:
+                            md_bg_color:0,0,0,0
+                            size_hint:None,None
+                            size:"200dp","45dp"
+                            pos_hint:{"center_x":.5, "center_y":.2}
+                            MDLabel:
+                                text:"VIBELY"
+                                font_name:"../new/Audiowide/Audiowide-Regular.ttf"
+                                font_size:"40sp"
+                                bold: True
+                                md_bg_color:0,0,0,1
+                                color:184/255, 98/255, 27/255,1
+                                halign:"center"
+                MDCard:
+                    md_bg_color:'#A85A19'
+                    MDBoxLayout:
+                        orientation:"vertical"
+                        padding:'1dp'
+                        MDCard:
+                            pos_hint:{"center_x":.5, "center_y":.5}
+                            md_bg_color:'black'
+                            MDBoxLayout:
+                                orientation:"vertical"
+                                pos_hint:{"center_x":.5, "center_y":.5}
+                                spacing: "25dp"
+                                padding:"15dp"
+                                MDLabel:
+                                    text:"Discover, connect, and thrive with Vibely's social and lifestyle features."
+                                    font_style:"Caption"
+                                    font_size:"14sp"
+                                    halign:"center"
+                                    color:141/255, 25/255, 143/255,1
+                                MDLabel:
+                                    text:"WELCOME!"
+                                    font_name:"../new/Audiowide/Audiowide-Regular.ttf"
+                                    font_size:"30sp"
+                                    halign:"center"
+                                    color:184/255, 98/255, 27/255,1
+                                MDRaisedButton:
+                                    md_bg_color: '#8D198F'
+                                    text:"Sign In"
+                                    size_hint: .8,.15
+                                    pos_hint: {"center_x": 0.5}
+                                    on_release: root.to_signin("loginScreen","left")
+                                    text_color:"white"
+                                MDRectangleFlatButton:
+                                    text:"Sign Up"
+                                    size_hint: .8,.15
+                                    pos_hint: {"center_x": 0.5}
+                                    on_release: root.to_signup("regisScreen","left")
+                                    text_color:184/255, 98/255, 27/255,1
+                                    line_color: '#8D198F'
+                                Widget:       
+                                            
+                            
+        Screen:
+            id: login_screen
+            name: "loginScreen"
+            
+            MDBoxLayout:
+                orientation: "vertical"
+                padding:"20dp"
+                md_bg_color:'black'
+                MDCard:
+                    md_bg_color:'black'
+                    size_hint:None,None
+                    size:root.width,"200dp"
+                    pos_hint:{"center_x":.5, "center_y":.5}
+                    MDFloatLayout:
+                        MDCard:
+                            size_hint: None,None
+                            md_bg_color:0,0,0,0
+                            pos_hint:{"center_x":.5, "center_y":.5}
+                            size:"150dp","150dp"
+                            FitImage:
+                                source: "../new/images/vibely.png"
+                        MDCard:
+                            md_bg_color:0,0,0,0
+                            size_hint:None,None
+                            size:"200dp","45dp"
+                            pos_hint:{"center_x":.5, "center_y":.2}
+                            MDLabel:
+                                text:"VIBELY"
+                                font_name:"../new/Audiowide/Audiowide-Regular.ttf"
+                                font_size:"40sp"
+                                bold: True
+                                md_bg_color:0,0,0,1
+                                color:184/255, 98/255, 27/255,1
+                                halign:"center"
+                MDCard:
+                    md_bg_color:'#2A0944'
+                    MDBoxLayout:
+                        orientation:"vertical"
+                        padding:'1dp'
+                        MDCard:
+                            md_bg_color: 0,0,0,1
+                            pos_hint:{"center_x":.5, "center_y":.5}
+                            MDBoxLayout:
+                                orientation: "vertical"
+                                pos_hint:{"center_x":.5, "center_y":.5}
+                                spacing: "20dp"
+                                padding:"25dp"
+                                MDLabel:
+                                    text:"SIGN IN"
+                                    font_name:"../new/Audiowide/Audiowide-Regular.ttf"
+                                    font_size:"30sp"
+                                    halign:"center"
+                                    color:184/255, 98/255, 27/255,1
+                                LoginMDTextField:
+                                    id: username
+                                    hint_text: "Username"
+                                    helper_text:"Enter your username"
+                                LoginMDTextField:
+                                    id: passw
+                                    hint_text: "Password"
+                                    password: True
+                                    helper_text:"Enter your password"
+                            
+                                MDRaisedButton:
+                                    md_bg_color: (184/255, 98/255, 27/255,1)
+                                    text:"Sign In"
+                                    font_size:"20sp"
+                                    size_hint:.9,.3
+                                    pos_hint:{"center_x":.5, "center_y":.5}
+                                    on_release: root.signin()
+                                MDLabel:
+                                    text:"_________________ or _________________"
+                                    color: 1,1,1,.2
+                                    halign:"center"
+                                    font_size:"15sp"
+                                    pos_hint:{"center_x":.5, "center_y":.4}
+                                MDRoundFlatButton:
+                                    text:"Create an account"
+                                    size_hint:.6,.3
+                                    on_release: root.to_regisScreen("regisScreen",'left')
+                                    pos_hint:{"center_x":.5, "center_y":0.1}
+                                    text_color:"white"
+                            
+                                        
+        Screen:
+            id: regis_screen
+            name: "regisScreen"
+            MDBoxLayout:
+                orientation: 'vertical'
+                padding: "40dp"
+                md_bg_color:0,0,0,1
+                MDIconButton:
+                    icon:"arrow-left"
+                    icon_color: "purple"
+                    size_hint:None,.1
+                    
+                    on_release: root.returnToLog("loginScreen","right")
+                    pos_hint:{"center_x":0}
+                MDCard:
+                    size_hint:None,None
+                    size: root.width,"150dp"
+                    md_bg_color:0,0,0,0
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        MDLabel:
+                            text: "SIGN UP"
+                            font_name:"../new/Audiowide/Audiowide-Regular.ttf"
+                            font_size:"30sp"
+                            color:'#8D198F'
+                            halign: "left"
+                        MDLabel:
+                            text:"Sign up to discover entertainment and lifestyle for \nyourself"
+                            font_size:"13dp"
+                            color:184/255, 98/255, 27/255,1
+                MDCard:
+                    md_bg_color:'#2A0944'
+                    MDBoxLayout:
+                        orientation:"vertical"
+                        padding:'1dp'
+                        MDCard:
+                            md_bg_color: 0,0,0,1
+                            pos_hint:{"center_x":.5, "center_y":.5}
+                    
+                            MDBoxLayout:
+                                orientation:"vertical"
+                                pos_hint:{"center_x":.5, "center_y":.5}
+                                spacing: "15dp"
+                                padding:"20dp"
+                                RegisMDTextField:
+                                    id: regisUser
+                                    hint_text: "Username"
+                                RegisMDTextField:
+                                    id: regisEmail
+                                    hint_text: "Email"
+                                    validator: 'email'
+                                MDCard:
+                                    md_bg_color:0,0,0,0
+                                    size_hint: 1,.45
+                                    
+                                    MDFloatLayout:
+                                        
+                                        RegisMDTextField:
+                                            id:regisPass
+                                            hint_text: "Password"
+                                            pos_hint: {'center_y': 0.5, 'right': 1}
+                                            password: True
+                                            on_text: self.error = (len(self.text) < 8)
+                                        MDIconButton:
+                                            icon: 'eye-off'
+                                            pos_hint: {'center_y': 0.45, 'right': 1}
+                                            theme_text_color: 'Custom'
+                                            text_color: "#B8621B"
+                                            on_release:
+                                                self.icon = "eye" if self.icon == "eye-off" else "eye-off"
+                                                regisPass.password = False if regisPass.password is True else True
+                                MDCard:
+                                    size_hint: .8,.7
+                                    md_bg_color:0,0,0,0
+                                    pos_hint: {"center_x": 0.5}
+                                    MDRaisedButton:
+                                        md_bg_color: (184/255, 98/255, 27/255,1)
+                                        text:"Sign Up"
+                                        size_hint: .8,None
+                                        pos_hint: {"center_x": 0.5}
+                                        on_release: root.SuccessRegis()
+                                        
+
+                                MDLabel:
+                                    text:"By signing up you accept our Terms of Services and Privacy Policy."
+                                    size_hint: .8,.3
+                                    pos_hint: {"center_x": 0.5}
+                                    font_style:"Caption"
+                                    color: "#7B2F9F"
+                                    halign: "center"
+                                
+                         
+                               
+        Screen:
+            id: inVibely
+            name: "inVibely"
+            MDBoxLayout:
+                orientation: "vertical"
+                size: root.size
+                MDBottomNavigation:
+                    panel_color: "black"
+                    text_color_active: "#FE8131"
+                    text_color_normal: 1,1,1,1
+                    use_text: False
+                    transition_duration: .2
+                    selected_color_background: "black"
+                    MDBottomNavigationItem:
+                        name: 'screen 1'
+                        icon: 'magnify'
+                        #badge_icon: "numeric-10"
+                        MDBoxLayout:
+                            orientation:"vertical"
+                            MDTopAppBar:
+                                md_bg_color:"#0C0613"
+                                MDFloatLayout:
+                                    MDLabel:
+                                        pos_hint:{"center_x":.5, "center_y":.95}
+                                        text:"EXPLORE"
+                                        font_style:"H4"
+                                        bold: True
+                                        color:"#8D178F"
+                            MDCard:
+                                md_bg_color:"#190F28"
+                                MDBoxLayout:
+                                    orientation:"vertical"
+                                    padding:"15dp"
+                                    MDCard:
+                                        size_hint:None,None
+                                        size:"370dp","60dp"
+                                        md_bg_color:"#190F28"
+                                        MDBoxLayout:
+                                            orientation:"horizontal"
+                                            padding:"15dp"
+                                            MDLabel:
+                                                text:"CATEGORIES"
+                                                size_hint:None,None
+                                                size:"180dp","50dp"
+                                                font_size:"16dp"
+                                                color:"#FA7F30"
+                                                bold:True
+                                            MDIconButton:
+                                                icon_color:'#8D198F'
+                                                font_size: "16sp"
+                                                icon_right: "magnify"
+                                                on_release:
+                                                    manager.current = "search"
+
+                                    MDCard:
+                                        md_bg_color:"#11091D"
+                                        elevation:2
+                                        MDBoxLayout:
+                                            orientation: "horizontal"
+                                            MDCard:
+                                                md_bg_color:"#11091D"
+                                                Scroller:
+                                                    effect_cls:"ScrollEffect"
+                                                    scroll_wheel_distance:0
+                                                    bar_width:0
+                                                    MDBoxLayout:
+                                                        adaptive_height: True
+                                                        orientation: 'vertical'
+                                                        spacing:"15dp"
+                                                        padding:"15dp"
+                                                        
+                                                        CategMDCard:
+                                                            MDBoxLayout:
+                                                                orientation:"vertical"
+                                                                MDIconButton:
+                                                                    pos_hint: {"center_x": .5, "center_y": .5}
+                                                                    icon:'border-all'
+                                                                    icon_size:"35sp"
+                                                                    theme_icon_color: "Custom"
+                                                                    icon_color: 254/255, 129/255, 49/255,1
+                                                                    on_release: root.movieScreen("allScreen","right")
+                                                                MDLabel:
+                                                                    text:"All"
+                                                                    font_style:"Caption"
+                                                                    halign:"center"
+
+                                                        CategMDCard:
+                                                            MDBoxLayout:
+                                                                orientation:"vertical"
+                                                                MDIconButton:
+                                                                    pos_hint: {"center_x": .5, "center_y": .75}
+                                                                    icon:'movie-roll'
+                                                                    icon_size:"35sp"
+                                                                    theme_icon_color: "Custom"
+                                                                    icon_color: "#FA7F30"
+                                                                    on_release: root.movieScreen("movieScreen","right")
+                                                                MDLabel:
+                                                                    text:"Movies"
+                                                                    font_style:"Caption"
+                                                                    halign:"center"
+
+                                                        CategMDCard:
+        
+                                                            MDBoxLayout:
+                                                                orientation:"vertical"
+                                                                MDIconButton:
+                                                                    pos_hint: {"center_x": .5, "center_y": .75}
+                                                                    icon:'gamepad-variant-outline'
+                                                                    icon_size:"35sp"
+                                                                    theme_icon_color: "Custom"
+                                                                    icon_color:"#FA7F30"
+                                                                    on_release: root.gameScreen("gameScreen","right")
+                                                                MDLabel:
+                                                                    text:"Games"
+                                                                    font_style:"Caption"
+                                                                    halign:"center"
+
+                                                        CategMDCard:
+                                                            MDBoxLayout:
+                                                                orientation:"vertical"
+                                                                MDIconButton:
+                                                                    pos_hint: {"center_x": .5, "center_y": .5}
+                                                                    icon:'wallet-travel'
+                                                                    icon_size:"35sp"
+                                                                    theme_icon_color: "Custom"
+                                                                    icon_color: 254/255, 129/255, 49/255,1
+                                                                    on_release: root.travelScreen("travelScreen","right")
+                                                                MDLabel:
+                                                                    text:"Travel"
+                                                                    font_style:"Caption"
+                                                                    halign:"center"
+                                                        CategMDCard:
+                                                            MDBoxLayout:
+                                                                orientation:"vertical"
+                                                                MDIconButton:
+                                                                    pos_hint: {"center_x": .5, "center_y": .5}
+                                                                    icon:'music-box-outline'
+                                                                    icon_size:"35sp"
+                                                                    theme_icon_color: "Custom"
+                                                                    icon_color: 254/255, 129/255, 49/255,1
+                                                                    on_release: root.songScreen("songScreen","right")
+                                                                MDLabel:
+                                                                    text:"Songs"
+                                                                    font_style:"Caption"
+                                                                    halign:"center"     
+                                                        CategMDCard:
+                                                            MDBoxLayout:
+                                                                orientation:"vertical"
+                                                                MDIconButton:
+                                                                    pos_hint: {"center_x": .5, "center_y": .5}
+                                                                    icon:'dumbbell'
+                                                                    icon_size:"35sp"
+                                                                    theme_icon_color: "Custom"
+                                                                    icon_color: 254/255, 129/255, 49/255,1
+                                                                    on_release: root.sportScreen("sportScreen","right")
+                                                                MDLabel:
+                                                                    text:"Sports"
+                                                                    font_style:"Caption"
+                                                                    halign:"center"
+                                                        CategMDCard:
+                                                            MDBoxLayout:
+                                                                orientation:"vertical"
+                                                                MDIconButton:
+                                                                    pos_hint: {"center_x": .5, "center_y": .5}
+                                                                    icon:'noodles'
+                                                                    icon_size:"35sp"
+                                                                    theme_icon_color: "Custom"
+                                                                    icon_color: 254/255, 129/255, 49/255,1
+                                                                    on_release: root.foodScreen("foodScreen","right")
+                                                                MDLabel:
+                                                                    text:"Foods"
+                                                                    font_style:"Caption"
+                                                                    halign:"center"
+            
+                                                        
+                                                        
+                                                        
+                                            MDCard:
+                                                md_bg_color:"#0C0613"
+                                                size_hint:2,1
+                                                screen_manager: categScreen
+                                                
+                                                ScreenManager:
+                                                    id:categScreen
+                                                    Screen:
+                                                        id: all_Screen
+                                                        name: "allScreen"
+                                                        MDBoxLayout:
+                                                            orientation:"vertical"
+                                                            MDBoxLayout:
+                                                                orientation:"horizontal"
+                                                                size_hint_y:.09
+                                                                padding:"15dp"
+                                                                MDLabel:
+                                                                    text:"Multimedia"
+                                                                    font_size:"15sp"
+                                                                    color: "#8D178F"
+                                                                MDRectangleFlatIconButton:
+                                                                    icon:"arrow-down-drop-circle-outline"
+                                                                    text:"Filter"
+                                                                    theme_icon_color: 'Custom'
+                                                                    icon_color: "white"
+                                                                    text_color: "white"
+                                                                    line_color: "#FA7F30"
+                                                            Scroller:
+                                                                effect_cls:"ScrollEffect"
+                                                                scroll_wheel_distance:0
+                                                                bar_width:0
+                                                                MDStackLayout:
+                                                                    adaptive_height: True
+                                                                    orientation:"lr-tb"
+                                                                    padding:"15dp"
+                                                                    spacing:"15dp"
+                                                                    id:StackOfAll
+                                                    Screen:
+                                                        id: movie_Screen
+                                                        name: "movieScreen"
+                                                        MDBoxLayout:
+                                                            orientation:"vertical"
+                                                            
+                                                            MDBoxLayout:
+                                                                orientation:"horizontal"
+                                                                size_hint_y:.09
+                                                                padding:"15dp"
+                                                                MDLabel:
+                                                                    text:"Multimedia"
+                                                                    font_size:"15sp"
+                                                                    color: "#8D178F"
+                                                                MDRectangleFlatIconButton:
+                                                                    icon:"arrow-down-drop-circle-outline"
+                                                                    text:"Filter"
+                                                                    theme_icon_color: 'Custom'
+                                                                    icon_color: "white"
+                                                                    text_color: "white"
+                                                                    line_color: "#FA7F30"
+                                                            Scroller:
+                                                                effect_cls:"ScrollEffect"
+                                                                scroll_wheel_distance:0
+                                                                bar_width:0
+                                                                MDStackLayout:
+                                                                    adaptive_height: True
+                                                                    orientation:"lr-tb"
+                                                                    padding:"15dp"
+                                                                    spacing:"15dp"
+                                                                    id:StackOfMovies
+                                                    Screen:
+                                                        id: game_Screen
+                                                        name: "gameScreen"
+                                                        Scroller:
+                                                            effect_cls:"ScrollEffect"
+                                                            scroll_wheel_distance:0
+                                                            bar_width:0
+                                                            MDStackLayout:
+                                                                adaptive_height: True
+                                                                orientation:"lr-tb"
+                                                                padding:"15dp"
+                                                                spacing:"15dp"
+                                                                id:StackOfGames
+                                                    Screen:
+                                                        id: travel_Screen
+                                                        name: "travelScreen"
+                                                        MDBoxLayout:
+                                                            orientation:"vertical"
+                                                            MDBoxLayout:
+                                                                orientation:"horizontal"
+                                                                size_hint_y:.09
+                                                                padding:"15dp"
+                                                                MDLabel:
+                                                                    text:"Multimedia"
+                                                                    font_size:"15sp"
+                                                                    color: "#8D178F"
+                                                                MDRectangleFlatIconButton:
+                                                                    icon:"arrow-down-drop-circle-outline"
+                                                                    text:"Filter"
+                                                                    theme_icon_color: 'Custom'
+                                                                    icon_color: "white"
+                                                                    text_color: "white"
+                                                                    line_color: "#FA7F30"
+                                                            Scroller:
+                                                                effect_cls:"ScrollEffect"
+                                                                scroll_wheel_distance:0
+                                                                bar_width:0
+                                                                MDStackLayout:
+                                                                    adaptive_height: True
+                                                                    orientation:"lr-tb"
+                                                                    padding:"15dp"
+                                                                    spacing:"15dp"
+                                                                
+                                                    Screen:
+                                                        id: song_Screen
+                                                        name: "songScreen"
+                                                        Scroller:
+                                                            effect_cls:"ScrollEffect"
+                                                            scroll_wheel_distance:0
+                                                            bar_width:0
+                                                            MDStackLayout:
+                                                                adaptive_height: True
+                                                                orientation:"lr-tb"
+                                                                padding:"15dp"
+                                                                spacing:"15dp"
+                                                                id:StackOfSongs
+                                                    Screen:
+                                                        id: food_Screen
+                                                        name: "foodScreen"
+                                                        Scroller:
+                                                            effect_cls:"ScrollEffect"
+                                                            scroll_wheel_distance:0
+                                                            bar_width:0
+                                                            MDStackLayout:
+                                                                adaptive_height: True
+                                                                orientation:"lr-tb"
+                                                                padding:"15dp"
+                                                                spacing:"15dp"
+                                                                id:StackOfFoods
+                                                    Screen:
+                                                        id: sport_Screen
+                                                        name: "sportScreen"
+                                                        Scroller:
+                                                            effect_cls:"ScrollEffect"
+                                                            scroll_wheel_distance:0
+                                                            bar_width:0
+                                                            MDStackLayout:
+                                                                adaptive_height: True
+                                                                orientation:"lr-tb"
+                                                                padding:"15dp"
+                                                                spacing:"15dp"
+                                                                id:StackOfSports
+                                                                
+                    MDBottomNavigationItem:
+                        name: 'screen 2'
+                        icon: 'hexagon-multiple-outline'
+                        #badge_icon: "numeric-10"
+                        MDBoxLayout:
+                            orientation: 'vertical'
+                            md_bg_color:'black'
+                            MDTopAppBar:
+                                md_bg_color:"#0C0613"
+                                MDFloatLayout:
+                                    MDLabel:
+                                        pos_hint:{"center_x":.5, "center_y":.95}
+                                        text:"VIBELY"
+                                        font_style:"H4"
+                                        bold: True
+                                        color:"#8D178F"
+
+                            MDScrollView:
+                                size_hint_y: .3
+                                effect_cls:"ScrollEffect"
+                                scroll_wheel_distance:0
+                                bar_width:0
+                                MDBoxLayout:
+                                    orientation: "horizontal"
+                                    md_bg_color:"black"
+                                    
+                                    adaptive_width: True
+                                    spacing:"23dp"
+                                    padding:"15dp"
+                                    CardElementMDCard:
+                                        MDBoxLayout:
+                                            orientation:"vertical"
+                                            MDIconButton:
+                                                id_clicked: "all"
+                                                pos_hint: {"center_x": .5, "center_y": .5}
+                                                icon:'movie-roll'
+                                                icon_size:"35sp"
+                                                theme_icon_color: "Custom"
+                                                icon_color: 254/255, 129/255, 49/255,1
+                                                on_release: root.home(self.id_clicked)
+                                                
+                                            MDLabel:
+                                                text:"ALL"
+                                                font_style:"Caption"
+                                                halign:"center"
+
+
+                                    CardElementMDCard:
+                                        MDBoxLayout:
+                                            orientation:"vertical"
+                                            MDIconButton:
+                                                id_clicked: "movieshome"
+                                                pos_hint: {"center_x": .5, "center_y": .5}
+                                                icon:'movie-roll'
+                                                icon_size:"35sp"
+                                                theme_icon_color: "Custom"
+                                                icon_color: 254/255, 129/255, 49/255,1
+                                                on_release: root.home(self.id_clicked)
+                                                
+                                            MDLabel:
+                                                text:"Movies"
+                                                font_style:"Caption"
+                                                halign:"center"
+                                    
+                                    CardElementMDCard:
+                                        MDBoxLayout:
+                                            orientation:"vertical"
+                                            MDIconButton:
+                                                id_clicked: "gameshome"
+                                                pos_hint: {"center_x": .5, "center_y": .5}
+                                                icon:'gamepad-variant-outline'
+                                                icon_size:"35sp"
+                                                theme_icon_color: "Custom"
+                                                icon_color: 254/255, 129/255, 49/255,1
+                                                on_release: root.home(self.id_clicked)
+                                                
+                                            MDLabel:
+                                                text:"Games"
+                                                font_style:"Caption"
+                                                halign:"center"
+                                    CardElementMDCard:
+                                        MDBoxLayout:
+                                            orientation:"vertical"
+                                            MDIconButton:
+                                                id_clicked: "foodhome"
+                                                pos_hint: {"center_x": .5, "center_y": .5}
+                                                icon:'hamburger'
+                                                icon_size:"35sp"
+                                                theme_icon_color: "Custom"
+                                                icon_color: 254/255, 129/255, 49/255,1
+                                                on_release: root.home(self.id_clicked)
+                                                
+                                            MDLabel:
+                                                text:"Foods"
+                                                font_style:"Caption"
+                                                halign:"center"
+                                    CardElementMDCard:
+                                        MDBoxLayout:
+                                            orientation:"vertical"
+                                            MDIconButton:
+                                                id_clicked: "sporthome"
+                                                pos_hint: {"center_x": .5, "center_y": .5}
+                                                icon:'racquetball'
+                                                icon_size:"35sp"
+                                                theme_icon_color: "Custom"
+                                                icon_color: 254/255, 129/255, 49/255,1
+                                                on_release: root.home(self.id_clicked)
+                                                
+                                            MDLabel:
+                                                text:"Sports"
+                                                font_style:"Caption"
+                                                halign:"center"
+                                    CardElementMDCard:
+                                        MDBoxLayout:
+                                            orientation:"vertical"
+                                            MDIconButton:
+                                                id_clicked: "songhome"
+                                                pos_hint: {"center_x": .5, "center_y": .5}
+                                                icon:'music-box-outline'
+                                                icon_size:"35sp"
+                                                theme_icon_color: "Custom"
+                                                icon_color: 254/255, 129/255, 49/255,1
+                                                on_release: root.home(self.id_clicked)
+                                                
+                                            MDLabel:
+                                                text:"Songs"
+                                                font_style:"Caption"
+                                                halign:"center"
+                                    
+                            MDBoxLayout:
+                                orientation: 'vertical'
+                                md_bg_color:'black'
+                                MDTabs:
+                                    id: android_tabs
+                                    background_color:26/255, 16/255, 41/255,1
+                                    lock_swiping:True
+                                    tab_hint_x: True
+                                    MyTab:
+                                        tab_label_text:"All"
+                                        
+                                        Scroller:
+                                            effect_cls:"ScrollEffect"
+                                            scroll_wheel_distance:0
+                                            bar_width:0
+                                            MDBoxLayout:
+                                                adaptive_height:True
+                                                #orientation: "vertical"
+                                                #size_hint: (None, None)
+                                                #height: self.minimum_height
+                                                id: home_container
+                                                orientation: "vertical"
+                                                spacing: "100dp"
+                                                padding: "20dp"
+                                    MyTab:
+                                        tab_label_text:"About Us"
+                                        Scroller:
+                                            effect_cls:"ScrollEffect"
+                                            scroll_wheel_distance:0
+                                            bar_width:0
+                                            MDBoxLayout:
+                                                orientation: 'vertical'
+                                                adaptive_height: True
+                                                padding:"15dp"
+                                                spacing:"10dp"
+                                                MDCard:
+                                                    size_hint:None,None
+                                                    size:"370dp","700dp"
+                                                    MDBoxLayout:
+                                                        orientation: 'vertical'
+                                                        padding:"15dp"
+                                                        spacing:"10dp"
+                                                        MDLabel:
+                                                            text:"VIBELY"
+                                                            font_name:"../new/Audiowide/Audiowide-Regular.ttf"
+                                                            font_size:"50sp"
+                                                            size_hint:None,None
+                                                            size:"370dp","100dp"
+                                                        
+                                                        MDLabel:
+                                                            background_color:"white"
+                                                            text:"Get to know more about our mission, our team, and what we stand for in this ''About Us'' section.\n\n\nWelcome to Vibely - your go-to source for all things lifestyle and entertainment. Our mission is to inspire, motivate, and empower individuals to live their best lives by providing a platform that connects people, events, and experiences in a fun and engaging way.\n\nOur team of passionate developers and creatives have designed Vibely with you in mind, making it easy for you to find and connect with like-minded individuals, discover new places to explore, and stay up-to-date with the latest events and happenings in your area.\n\nAt Vibely, we believe that everyone deserves to live their most vibrant and fulfilling life, and we're here to support you every step of the way. Whether you're looking to discover new hobbies, connect with new people, or simply find inspiration for your daily routine, we've got you covered.\n\nJoin the Vibely community today and discover things freely. We can't wait to see where your journey takes you!"
+                                                            font_style:"Caption"
+                                                            halign:"justify"
+                                                            valign:"top"
+                                                        
+                                                    
+                                                
+
+
+                        
+                            
+                    MDBottomNavigationItem:
+                        name: 'screen 3'
+                        icon: 'heart'
+                        id: faves
+                        #on_tab_press: root.refresh_callback()
+                        #badge_icon: "numeric-10"
+                                
+                        MDBoxLayout:
+                            orientation: 'vertical'
+                            md_bg_color:'black'
+                            screen_manager: detailScreen
+                            ScreenManager:
+                                id:detailScreen
+                                Screen:
+                                    id: myfav
+                                    name:'myfav'
+                                    MDBoxLayout:
+                                        orientation: 'vertical'
+                                        md_bg_color:'black'
+                                        screen_manager: detailScreen
+                                        MDTopAppBar:
+                                            md_bg_color: "#1A1029"
+                                            MDFloatLayout:
+                                                MDLabel:
+                                                    pos_hint:{"center_x":.5,"center_y":.95}
+                                                    text: "FAVORITES"
+                                                    halign:'center'
+                                                    font_size:"30sp"
+                                                    bold:True
+                                                    color: "#BE3441"
+                                        MDTabs:
+                                            id: android_tabs
+                                            lock_swiping:True
+                                        
+                                                            
+                                            Tab:
+                                                tab_label_text:"GAMES"
+                                                MDScrollView:
+                                                    MDBoxLayout:
+                                                        orientation: 'vertical'
+                                                        size_hint_y: 10
+                                                        MDStackLayout:
+                                                            orientation:"lr-tb"
+                                                            md_bg_color:0,0,0,1
+                                                            padding:"15dp"
+                                                            spacing:"15dp"
+                                                            id:all_my_games
+                                                
+                                            Tab:
+                                                tab_label_text:"MOVIES"
+                                                MDScrollView:
+                                                    MDBoxLayout:
+                                                        orientation: 'vertical'
+                                                        size_hint_y: 10
+                                                        MDStackLayout:
+                                                            orientation:"lr-tb"
+                                                            md_bg_color:0,0,0,1
+                                                            padding:"15dp"
+                                                            spacing:"15dp"
+                                                            id:all_my_movies
+                                            Tab:
+                                                tab_label_text:"SONGS"
+                                                MDScrollView:
+                                                    MDBoxLayout:
+                                                        orientation: 'vertical'
+                                                        size_hint_y: 10
+                                                        MDStackLayout:
+                                                            orientation:"lr-tb"
+                                                            md_bg_color:0,0,0,1
+                                                            padding:"15dp"
+                                                            spacing:"15dp"
+                                                            id:all_my_songs
+                                            Tab:
+                                                tab_label_text:"SPORTS"
+                                                MDScrollView:
+                                                    MDBoxLayout:
+                                                        orientation: 'vertical'
+                                                        size_hint_y: 10
+                                                        MDStackLayout:
+                                                            orientation:"lr-tb"
+                                                            md_bg_color:0,0,0,1
+                                                            padding:"15dp"
+                                                            spacing:"15dp"
+                                                            id:all_my_sports
+                                                            
+                                            Tab:
+                                                tab_label_text:"FOOD"
+                                                MDScrollView:
+                                                    MDBoxLayout:
+                                                        orientation: 'vertical'
+                                                        size_hint_y: 10
+                                                        MDStackLayout:
+                                                            orientation:"lr-tb"
+                                                            md_bg_color:0,0,0,1
+                                                            padding:"15dp"
+                                                            spacing:"15dp"
+                                                            id:all_my_foods
+                                Screen:
+                                    id:gotomovie
+                                    name:"gotomovie"
+                                    MDCard:
+                                        md_bg_color:"black"
+                                        MDBoxLayout:
+                                            orientation: 'vertical'
+                                            MDTopAppBar:
+                                                md_bg_color: "#1A1029"
+                                                
+                                                MDFloatLayout:
+                                                    MDIconButton:
+                                                        icon: "arrow-left"
+                                                        pos_hint: {"center_x": 0.04, "center_y": .95}
+                                                        on_release: root.returnScreen("myfav",'right')
+                                                    MDLabel:
+                                                        pos_hint:{"center_x":.5,"center_y":.95}
+                                                        text: "DETAILS"
+                                                        halign:'center'
+                                                        font_size:"30sp"
+                                                        bold:True
+                                                        color: "#BE3441"
+                                            Scroller:
+                                                effect_cls:"ScrollEffect"
+                                                scroll_wheel_distance:0
+                                                bar_width:0
+                                                MDBoxLayout:
+                                                    adaptive_height: True
+                                                    orientation: 'vertical'
+                                                    padding:"15dp"
+                                                    
+                                                    MDCard:
+                                                        md_bg_color:0,0,0,0
+                                                        size_hint:None,None
+                                                        size:"275dp","375dp"
+                                                        pos_hint: {"center_x": .5, "center_y": .5}
+                                                        FitImage:
+                                                            id: fitthemovie
+                                                            radius:'10dp'
+                                                    MDCard:
+                                                        md_bg_color:'black'
+                                                        size_hint:None,None
+                                                        size:"275dp","500dp"
+                                                        pos_hint: {"center_x": .5, "center_y": .5}
+                                                        MDFloatLayout:
+                                                            MDBoxLayout:
+                                                                orientation:'vertical'
+                                                                padding:"20dp"
+                                                                pos_hint: {"center_x": .5, "center_y": .5}
+                                                                MDBoxLayout:
+                                                                    orientation:'vertical'
+                                                                    size_hint:None,None
+                                                                    size:"275dp","75dp"
+                                                                    MDLabel:
+                                                                        id:movie_title
+                                                                        halign:'left'
+                                                                        font_size:"30sp"
+                                                                        bold:True
+                                                                MDLabel:
+                                                                    id: movie_det
+                                                                    halign:"justify"
+                                                                    font_style: 'Body1'
+
+                                Screen:
+                                    id:gotogame
+                                    name:"gotogame"
+                                    MDCard:
+                                        md_bg_color:"black"
+                                        MDBoxLayout:
+                                            orientation: 'vertical'
+                                            MDTopAppBar:
+                                                md_bg_color: "#1A1029"
+                                                
+                                                MDFloatLayout:
+                                                    MDIconButton:
+                                                        icon: "arrow-left"
+                                                        pos_hint: {"center_x": 0.04, "center_y": .95}
+                                                        on_release: root.returnScreen("myfav",'right')
+                                                    MDLabel:
+                                                        pos_hint:{"center_x":.5,"center_y":.95}
+                                                        text: "DETAILS"
+                                                        halign:'center'
+                                                        font_size:"30sp"
+                                                        bold:True
+                                                        color: "#BE3441"
+                                            Scroller:
+                                                effect_cls:"ScrollEffect"
+                                                scroll_wheel_distance:0
+                                                bar_width:0
+                                                MDBoxLayout:
+                                                    adaptive_height: True
+                                                    orientation: 'vertical'
+                                                    padding:"15dp"
+                                                    
+                                                    MDCard:
+                                                        md_bg_color:0,0,0,0
+                                                        size_hint:None,None
+                                                        size:"275dp","375dp"
+                                                        pos_hint: {"center_x": .5, "center_y": .5}
+                                                        FitImage:
+                                                            id: fitthegame
+                                                            radius:'10dp'
+                                                    MDCard:
+                                                        md_bg_color:'black'
+                                                        size_hint:None,None
+                                                        size:"275dp","500dp"
+                                                        pos_hint: {"center_x": .5, "center_y": .5}
+                                                        MDFloatLayout:
+                                                            MDBoxLayout:
+                                                                orientation:'vertical'
+                                                                padding:"20dp"
+                                                                pos_hint: {"center_x": .5, "center_y": .5}
+                                                                MDBoxLayout:
+                                                                    orientation:'vertical'
+                                                                    size_hint:None,None
+                                                                    size:"275dp","75dp"
+                                                                    MDLabel:
+                                                                        id:game_name
+                                                                        halign:'left'
+                                                                        font_size:"30sp"
+                                                                        bold:True
+                                                                MDLabel:
+                                                                    id: game_des
+                                                                    halign:"justify"
+                                                                    font_style: 'Body1'
+                                Screen:
+                                    id:gotosong
+                                    name:"gotosong"
+                                    MDCard:
+                                        md_bg_color:"black"
+                                        MDBoxLayout:
+                                            orientation: 'vertical'
+                                            MDTopAppBar:
+                                                md_bg_color: "#1A1029"
+                                                
+                                                MDFloatLayout:
+                                                    MDIconButton:
+                                                        icon: "arrow-left"
+                                                        pos_hint: {"center_x": 0.04, "center_y": .95}
+                                                        on_release: root.returnScreen("myfav",'right')
+                                                    MDLabel:
+                                                        pos_hint:{"center_x":.5,"center_y":.95}
+                                                        text: "DETAILS"
+                                                        halign:'center'
+                                                        font_size:"30sp"
+                                                        bold:True
+                                                        color: "#BE3441"
+                                            Scroller:
+                                                effect_cls:"ScrollEffect"
+                                                scroll_wheel_distance:0
+                                                bar_width:0
+                                                MDBoxLayout:
+                                                    adaptive_height: True
+                                                    orientation: 'vertical'
+                                                    padding:"15dp"
+                                                    spacing:'15dp'
+                                                    MDCard:
+                                                        md_bg_color:0,0,0,0
+                                                        size_hint:None,None
+                                                        size:"200dp","225dp"
+                                                        pos_hint: {"center_x": .3, "center_y": .5}
+                                                        FitImage:
+                                                            id: fitthesong
+                                                            radius:'10dp'
+                                                    
+                                                    MDCard:
+                                                        md_bg_color:'black'
+                                                        size_hint:None,None
+                                                        size:"275dp",song_det.texture_size[1]+ dp(200)
+                                                        
+                                                        MDBoxLayout:
+                                                            orientation:'vertical'
+                                                            pos_hint: {"center_x": .5, "center_y": .47}
+                                                            MDLabel:
+                                                                id:song_title
+                                                                halign:'left'
+                                                                font_size:"30sp"
+                                                                bold:True
+                                                                size_hint_y:None
+                                                                height: self.texture_size[1]
+                                                            MDLabel:
+                                                                id: song_det
+                                                                halign:"justify"
+                                                                font_style: 'Body1'
+                                                                size_hint_y:None
+                                                                height: self.texture_size[1]+ dp(200)
+                                Screen:
+                                    id:gotofood
+                                    name:"gotofood"
+                                    MDCard:
+                                        md_bg_color:"black"
+                                        MDBoxLayout:
+                                            orientation: 'vertical'
+                                            MDTopAppBar:
+                                                md_bg_color: "#1A1029"
+                                                
+                                                MDFloatLayout:
+                                                    MDIconButton:
+                                                        icon: "arrow-left"
+                                                        pos_hint: {"center_x": 0.04, "center_y": .95}
+                                                        on_release: root.returnScreen("myfav",'right')
+                                                    MDLabel:
+                                                        pos_hint:{"center_x":.5,"center_y":.95}
+                                                        text: "DETAILS"
+                                                        halign:'center'
+                                                        font_size:"30sp"
+                                                        bold:True
+                                                        color: "#BE3441"
+                                            Scroller:
+                                                effect_cls:"ScrollEffect"
+                                                scroll_wheel_distance:0
+                                                bar_width:0
+                                                MDBoxLayout:
+                                                    adaptive_height: True
+                                                    orientation: 'vertical'
+                                                    padding:"15dp"
+                                                    
+                                                    MDCard:
+                                                        md_bg_color:0,0,0,0
+                                                        size_hint:None,None
+                                                        size:"275dp","375dp"
+                                                        pos_hint: {"center_x": .5, "center_y": .5}
+                                                        FitImage:
+                                                            id: fitthefood
+                                                            radius:'10dp'
+                                                    MDCard:
+                                                        md_bg_color:'black'
+                                                        size_hint:None,None
+                                                        size:"275dp","500dp"
+                                                        pos_hint: {"center_x": .5, "center_y": .5}
+                                                        MDFloatLayout:
+                                                            MDBoxLayout:
+                                                                orientation:'vertical'
+                                                                padding:"20dp"
+                                                                pos_hint: {"center_x": .5, "center_y": .5}
+                                                                MDBoxLayout:
+                                                                    orientation:'vertical'
+                                                                    size_hint:None,None
+                                                                    size:"275dp","75dp"
+                                                                    MDLabel:
+                                                                        id:food_title
+                                                                        halign:'left'
+                                                                        font_size:"30sp"
+                                                                        bold:True
+                                                                MDLabel:
+                                                                    id: food_det
+                                                                    halign:"justify"
+                                                                    font_style: 'Body1'
+                                Screen:
+                                    id:gotosport
+                                    name:"gotosport"
+                                    MDCard:
+                                        md_bg_color:"black"
+                                        MDBoxLayout:
+                                            orientation: 'vertical'
+                                            MDTopAppBar:
+                                                md_bg_color: "#1A1029"
+                                                
+                                                MDFloatLayout:
+                                                    MDIconButton:
+                                                        icon: "arrow-left"
+                                                        pos_hint: {"center_x": 0.04, "center_y": .95}
+                                                        on_release: root.returnScreen("myfav",'right')
+                                                    MDLabel:
+                                                        pos_hint:{"center_x":.5,"center_y":.95}
+                                                        text: "DETAILS"
+                                                        halign:'center'
+                                                        font_size:"30sp"
+                                                        bold:True
+                                                        color: "#BE3441"
+                                            Scroller:
+                                                effect_cls:"ScrollEffect"
+                                                scroll_wheel_distance:0
+                                                bar_width:0
+                                                MDBoxLayout:
+                                                    adaptive_height: True
+                                                    orientation: 'vertical'
+                                                    padding:"15dp"
+                                                    
+                                                    MDCard:
+                                                        md_bg_color:0,0,0,0
+                                                        size_hint:None,None
+                                                        size:"275dp","375dp"
+                                                        pos_hint: {"center_x": .5, "center_y": .5}
+                                                        FitImage:
+                                                            id: fitthesport
+                                                            radius:'10dp'
+                                                    MDCard:
+                                                        md_bg_color:'black'
+                                                        size_hint:None,None
+                                                        size:"275dp","300dp"
+                                                        pos_hint: {"center_x": .5, "center_y": .5}
+                                                        MDFloatLayout:
+                                                            MDBoxLayout:
+                                                                orientation:'vertical'
+                                                                padding:"20dp"
+                                                                pos_hint: {"center_x": .5, "center_y": .5}
+                                                                MDBoxLayout:
+                                                                    orientation:'vertical'
+                                                                    size_hint:None,None
+                                                                    size:"275dp","75dp"
+                                                                    MDLabel:
+                                                                        id:sport_title
+                                                                        halign:'left'
+                                                                        font_size:"30sp"
+                                                                        bold:True
+                                                                MDLabel:
+                                                                    id: sport_det
+                                                                    halign:"justify"
+                                                                    font_style: 'Body1'
+                            
+                                                
+                                                
+                                
+                                                
+                    MDBottomNavigationItem:
+                        name: 'screen 4'
+                        icon: 'account'
+                        #badge_icon: "numeric-10"
+                        MDBoxLayout:
+                            md_bg_color:"#0D0814"
+                            orientation: 'vertical'
+                            size_hint:None,None
+                            size:root.width,root.height
+
+                            MDBoxLayout:
+                                orientation: 'vertical'
+                                size_hint:None,None
+                                size:root.width,'300dp'
+                                padding:0,0,20,0
+                                elevation:3
+                                radius:[20,]
+
+                                canvas:
+                                    Color: 
+                                    Rectangle:
+                                        source: '../new/images/league.jpg'
+                                        size: self.size
+                                        pos: self.pos 
+                               
+                                MDFloatLayout:
+                                    MDIconButton:
+                                        icon: "logout"
+                                        pos_hint: {"center_x": 0.93, "center_y": .3}
+                                        on_release: root.logout()
+                            
+                                
+                                MDBoxLayout:
+                                    orientation: 'horizontal'
+                                    padding:'20dp'
+                                    spacing: '10dp'
+                                    ProfileMDCard:
+                                        id: profile_card
+                                        FitImage:
+                                            source:'../new/images/els.png'
+                                        
+                                    MDCard:
+                                        size_hint:None,None
+                                        size:root.width,'75dp'
+                                        md_bg_color:0,0,0,0.6
+                                        MDBoxLayout:
+                                            orientation:'vertical'
+                                            padding:'10dp'
+                                            MDLabel:
+                                                id:the_username
+                                                size_hint:None,None
+                                                size:"160dp",'30dp'
+                                                font_size: '20dp'
+                                                halign:"left"
+                                            MDLabel:
+                                                text:"User"
+                                                font_size: '15dp'
+                                                size_hint:None,None
+                                                size:"160dp",'30dp'
+                                                halign:"left"
+                                                text_color:0,0,0,.1
+                                
+                                
+                            MDCard:
+                                MDBoxLayout:
+                                    
+                                    orientation:"vertical"
+                                    MDCard:
+                                        md_bg_color:26/255, 16/255, 41/255,.5
+                                        size_hint: None, None
+                                        size: root.width, "160dp"
+                                        radius:[0,0,20,20]
+                                        MDBoxLayout:
+                                            orientation:"vertical"
+                                            padding:"15dp"
+                                            TwoLineListItem:
+                                                text:"Email Address"
+                                                id:the_email
+                                                secondary_text: 'mark@gmail.com'
+                                                font_style: "Caption"
+                                                
+                                            TwoLineListItem:
+                                                text:"Type of user"
+                                                id:the_type
+                                                secondary_text: 'Gamer'
+                                                font_style:"Caption"
+
+                                    MDBoxLayout:
+                                        orientation:"horizontal"
+                                        elevation:3
+                                        size_hint: None, None
+                                        size: root.width, "60dp"
+                                        md_bg_color:"#0D0814"
+                                        padding:'9dp'
+                                        MDLabel:
+                                            text:"Album"
+                                            font_size:'20sp'
+                                            font_name:"../new/static/Inter-Bold.ttf"
+                                            color:"#8D178F"
+                                        MDIconButton:
+                                            id: clicked_plus
+                                            icon: "plus"
+                                            theme_text_color: 'Custom'
+                                            text_color: "#FE8131"
+                                            on_release: root.add()
+                                        MDIconButton:
+                                            icon: "delete-outline"
+                                            theme_text_color: 'Custom'
+                                            text_color: "#FE8131"
+                                    MDCard:       
+                                        md_bg_color:0,0,0,1
+                                        radius:[0,0,20,20] 
+                                        Scroller:
+                                            id:scroller
+                                            effect_cls:"ScrollEffect"
+                                            scroll_wheel_distance:0
+                                            bar_width:0
+                                            MDBoxLayout:
+                                                id: addtoBL
+                                                adaptive_width: True
+                                                orientaion:"horizontal"
+                                                spacing:"15dp"
+                                                pos_hint: {"center_x": .5, "center_y": .5}
+                                                padding:"15dp"
+                                    MDBoxLayout:
+                                        size_hint: None, None
+                                        size: root.width, "25dp"
+                                        md_bg_color:"#0D0814"
+
+        Screen:
+            name: "search"
+
+            MDBoxLayout:
+                orientation: "vertical"
+                size: root.size
+
+
+                MDTopAppBar:
+                    id: toolbar
+                    title: "SEARCH"
+                    #right_action_items: [["dots-vertical", lambda x: root.dropdown(x)]]
+                    # right_action_items: [['magnify', lambda x: app.search()]]
+                    left_action_items: [["arrow-left", lambda x: setattr(root.ids.manager, "current", "inVibely")]]
+
+                MDBoxLayout:
+                    size_hint_y: None
+                    height: dp(50)
+                    padding: dp(10)
+
+                    TextInput:
+                        id: search_input
+                        hint_text: 'Search'
+                        multiline: False
+                        size_hint_x: 0.8
+                        size_hint_y: None
+                        height: dp(30)
+                    
+                    MDIconButton:
+                        icon: "magnify"
+                        text: 'Search'
+                        size_hint_x: 0.2
+                        size_hint_y: None
+                        height: dp(30)
+                        pos_hint: {'center_y': 0.5}
+                        on_release:
+                            root.search()
+                
+                MDBoxLayout:
+                    size_hint_y: None
+                    height: (620)
+                    padding: (10)
+
+                    ScrollView:
+                        size_hint: (1, None)
+                        size: (self.width, (600))
+
+                        MDList:
+                            id: search_list
+                            Widget:  #spacer widget here
+                                size_hint_y: None
+                                height: "30dp"
